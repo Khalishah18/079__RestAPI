@@ -65,7 +65,7 @@ fun FormInputSiswa(
 @Composable
 fun EntryKontakBody(
     insertUiState: InsertUiState,
-    onKontakValueChange: (InsertUiEvent) -> Unit,
+    onSiswaValueChange: (InsertUiEvent) -> Unit,
     onSaveClick: () -> Unit,
     modifier: Modifier = Modifier
 ){
@@ -73,6 +73,10 @@ fun EntryKontakBody(
         verticalArrangement = Arrangement.spacedBy(18.dp),
         modifier = modifier.padding(12.dp)
     ){
-
+        FormInputSiswa(
+            insertUiEvent = insertUiState.insertUiEvent,
+            onValueChange = onSiswaValueChange,
+            modifier = Modifier.fillMaxWidth()
+        )
     }
 }
