@@ -1,5 +1,6 @@
 package com.example.consumerestapi.ui.kontak
 
+import android.provider.ContactsContract.CommonDataKinds.Email
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -29,6 +30,14 @@ fun FormInputSiswa(
             modifier = Modifier.fillMaxWidth(),
             enabled = enabled,
             singleLine = true
-            )
+        )
+        OutlinedTextField(
+            value = insertUiEvent.email,
+            onValueChange = {onValueChange(insertUiEvent.copy(email = it))},
+            label = { Text("Email")},
+            modifier = Modifier.fillMaxWidth(),
+            enabled = enabled,
+            singleLine = true
+        )
     }
 }
