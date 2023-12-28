@@ -207,7 +207,7 @@ fun KontakCard(
                 )
             }
             Text(
-                text = kontak.alamat,
+                text = kontak.email,
                 style = MaterialTheme.typography.titleMedium
             )
             Spacer(Modifier.weight(1f))
