@@ -41,9 +41,10 @@ import com.example.consumerestapi.R
 import com.example.consumerestapi.model.Kontak
 import com.example.consumerestapi.navigation.DestinasiNavigasi
 import com.example.consumerestapi.ui.PenyediaViewModel
-import com.example.consumerestapi.ui.TopAppBarKontak
+
 import com.example.consumerestapi.ui.home.viewmodel.HomeViewModel
 import com.example.consumerestapi.ui.home.viewmodel.KontakUIState
+import com.example.restapi.ui.TopAppBarKontak
 
 object DestinasiHome : DestinasiNavigasi {
     override val route = "home"
@@ -103,7 +104,7 @@ fun HomeStatus(
     retryAction: () -> Unit,
     modifier: Modifier = Modifier,
     onDeleteClick: (Kontak) -> Unit = {},
-    onDetailClick: (Kontak) -> Unit
+    onDetailClick: (Int) -> Unit
 ) {
     when (kontakUIState) {
         is KontakUIState.Loading -> OnLoading(modifier = modifier.fillMaxWidth())
@@ -165,9 +166,9 @@ fun KontakLayout(
                 kontak = kontak,
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clickable { onDetailClick(Kontak) },
+                    .clickable { onDetailClick(kontak) },
                 onDeleteClick = {
-                    onDeleteClick(Kontak)
+                    onDeleteClick(kontak)
                 }
             )
         }

@@ -25,7 +25,7 @@ data class InsertUiEvent(
 fun InsertUiEvent.toKontak() : Kontak = Kontak(
     id = id,
     nama = nama,
-    alamat = alamat,
+    email = alamat,
     nohp = nohp
 )
 
@@ -36,7 +36,7 @@ data class InsertUiState(
 fun Kontak.toInsertUiEvent(): InsertUiEvent = InsertUiEvent(
     id = id,
     nama = nama,
-    alamat = alamat,
+    alamat = email,
     nohp = nohp
 )
 
